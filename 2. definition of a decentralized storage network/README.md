@@ -36,7 +36,7 @@ This property requires that no bounded adversary A can convince clients to accep
 
 **Definition 2.2.** A DSN scheme Π provides data integrity if: for any successful Put execution for some datad under key k, there is no computationally-bounded adversary A that can convince a client to accept d′, ford′ ̸= d at the end of a Get execution for identifier k.
 
-###2.2.2 Retrievability
+### 2.2.2 Retrievability
 
 This property captures the requirement that, given our fault-tolerance assumptions of Π, if some data hasbeen successfully stored in Π and storage providers continue to follow the protocol, then clients can eventuallyretrieve the data.
 
