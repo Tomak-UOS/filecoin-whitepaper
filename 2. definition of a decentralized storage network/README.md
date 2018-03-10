@@ -14,7 +14,7 @@
 
 ## 2.1 Fault tolerance
 
-###2.1.1 Management faults
+### 2.1.1 Management faults
 
  We define management faults to be byzantine faults caused by participants in the Manage protocol. A DSNscheme relies on the fault tolerance of its underlining Manage protocol. Violations on the faults toleranceassumptions for management faults can compromise liveness and safety of the system.
 
