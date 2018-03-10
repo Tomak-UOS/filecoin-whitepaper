@@ -10,7 +10,7 @@
     1. Elementary Components
     2. Protocol Overview
     3. Paper organization
-2. Definition of a Decentralized Storage Network
+2. [Definition of a Decentralized Storage Network](./2.\ definition\ of\ a\ decentralized\ storage\ network/README,md#2.\ Definintion\ of\ a\ Decentralized\ Storage\ Network)
     1. Fault tolerance
     2. Properties
 3. Proof-of-Replication and Proof-of-Spacetime
