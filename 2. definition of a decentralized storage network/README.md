@@ -1,16 +1,16 @@
 # 2. Definintion of a Decentralized Storage Network
 
- We introduce the notion of a Decentralized Storage Network (DSN) scheme. DSNs aggregate storage offeredby multiple independent storage providers and self-coordinate to provide data storage and data retrieval toclients. Coordination is decentralized and does not require trusted parties: the secure operation of thesessystems is achieved through protocols that coordinate and verify operations carried out by individual parties.DSNs can employ different strategies for coordination, including Byzantine Agreement, gossip protocols, orCRDTs, depending on the requirements of the system. Later, in Section 4, we provide a construction forthe Filecoin DSN.
+ DSN(Decentralized Storage Network)의 개념을 소개한다. DSN은 독립 스토리지 공급자들이 제공하는 스토리지 통합하고, 자체 조정하여 클라이언트에 데이터 저장과 검색을 제공한다. 조정은 분산화되어, 신뢰할 수 있는 조직, 그룹을 필요로 하지 않는다. 이 시스템의 보안은 개인들이 수행한 작업들을 조정, 검증하는 프로토콜에 의해 이루어진다. DSN은 시스템의 요구사항에 따라 Byzantine Agreement, Gossip Protocol, CRDT를 포함한 다양한 해결법을 조정을 위해 선택할 수 있다. 나중에 4절에서 Filecoin DSN을 위한 구성을 제공한다.
 
-**Definition 2.1.** A DSN scheme Π is a tuple of protocols run by storage providers and clients:
+**Definition 2.1.** DSN 스키마 Π는 스토리지 공급자와 클라이언트가 실행하는 프로토콜의 튜플(tuple)이다.
 
 (Put, Get, Manage)
 
-* Put(data) → key: Clients execute the Put protocol to store data under a unique identifier key.
-* Get(key) → data: Clients execute the Get protocol to retrieve data that is currently stored using key.
-* Manage(): The network of participants coordinates via the Manage protocol to: control the availablestorage, audit the service offered by providers and repair possible faults. The Manage protocol is runby storage providers often in conjunction with clients or a network of auditors[^1].
+* Put(data) → key: Put 프로토콜을 이용해서 data를 고유 식별자 key로 저장한다.
+* Get(key) → data: Get 프로토콜은 현재 key를 사용하여 저장된 data를 검색합니다.
+* Manage(): Network of Participants는 사용가능한 스토리지를 제어하고, 공급자가 제공한 서비스들을 검사하고, 수정가능한 오류들을 수정하는 Manage 프로토콜을 통해 조정한다. Manage 프로토콜은 클라이언트와 네트워크 auditor들과 함께 스토리지 공급자들에 의해 실행된다[^1].
 
- A DSN scheme Π must guarantee data integrity and retrievability as well as tolerate management and storagefaults defined in the following sections.
+ DSN 스키마 Π는 다음절에서 정의되는 관리와 저장소 오류를 tolerate할 뿐만 아니라  데이터 무결성(integraity)과 검색 가능성(retrievability)을 보장해야 한다.
 
 ## 2.1 Fault tolerance
 
@@ -54,4 +54,4 @@ DSNs can provide other properties specific to their application. We define three
 
 ---
 
-[^1]: In the case where the Manage protocol relies on a blockchain, we consider the miners as auditors, since they verify andcoordinate storage providers
+[^1]: In the case where the Manage protocol relies on a blockchain, we consider the miners as auditors, since they verify and coordinate storage providers
