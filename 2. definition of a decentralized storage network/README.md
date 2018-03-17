@@ -10,15 +10,15 @@
 * Get(key) → data: Get 프로토콜은 현재 key를 사용하여 저장된 data를 검색합니다.
 * Manage(): Network of Participants는 사용가능한 스토리지를 제어하고, 공급자가 제공한 서비스들을 검사하고, 수정가능한 오류들을 수정하는 Manage 프로토콜을 통해 조정한다. Manage 프로토콜은 클라이언트와 네트워크 auditor들과 함께 스토리지 공급자들에 의해 실행된다[^1].
 
- DSN 스키마 Π는 다음절에서 정의되는 관리와 저장소 오류를 tolerate할 뿐만 아니라  데이터 무결성(integraity)과 검색 가능성(retrievability)을 보장해야 한다.
+ DSN 스키마 Π는 다음절에서 정의되는 관리와 저장소 오류(**management** and **storage fault**)를 허용할 뿐만 아니라  데이터 무결성(integraity)과 검색 가능성(retrievability)을 보장해야 한다.
 
 ## 2.1 Fault tolerance
 
 ### 2.1.1 Management faults
 
- We define management faults to be byzantine faults caused by participants in the Manage protocol. A DSNscheme relies on the fault tolerance of its underlining Manage protocol. Violations on the faults toleranceassumptions for management faults can compromise liveness and safety of the system.
+ 우리는 Management fault를 Manage 프로토콜에서 참가자에 의해 일어난 비잔틴 오류로 정의한다. DSN 스키마는 (underlining) Manage 프로토콜의 fault tolerance에 의존한다. Management fault에 대한 fault tolerance 가정에 대한 Violation은 시스템의 동시성과 안정성을 저해한다. 
 
- For example, consider a DSN scheme Π, where the Manage protocol requires Byzantine Agreement (BA)to audit storage providers. In such protocol, the network receives proofs of storage from storage providersand runs BA to agree on the validity of these proofs. If the BA tolerates up to f faults out of n totalnodes, then our DSN can tolerate f < n/2 faulty nodes. On violations of these assumptions, audits can becompromised.
+ 예를 들어 Manage protocol이 스토리지 공급자들을 관리하기 위해 Byzantine Agreement(BA)를 필요로 하는 DSN 스키마 Π를 고려해보자. 그러한 프로토콜에서 네트워크는 스토리지 공급자들에게서 proof-of-storage를 받고, BA를 실행시켜 proof-of-storage의 유효성에 동의한다. 만약 BA가 n개의 노드 중 f개까지의 fault를 허용하면, DSN은  f < n/2개의 faulty node를 허용할 수 있다. 이러한 가정이 위반될 경우 검사가 올바르게 이루이지지 않을 것이다.
 
 ### 2.1.2 Storage faults
 
